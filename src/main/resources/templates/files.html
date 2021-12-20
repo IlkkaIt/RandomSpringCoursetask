@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title>File manager</title>
+    </head>
+    <body>
+ 
+       
+       <h2>Add File to List</h2>
+       <form method="POST" action="/files" enctype="multipart/form-data">
+            <input type="file" name="file" id="file"/>
+            <input type="submit" value="Add!"/>
+               
+                   
+            
+           
+             <ul>
+                <li th:each="file : ${files}">
+                <span><a th:href="@{/files/{id}(id=${file.id})}"><span th:text="${file.name}">file name</span></a>         
+                <span th:text="${file.size}">code</span>
+                <span th:text="${file.mediaType}">code</span> 
+                
+                
+                
+                
+                </li>
+                </ul>
+       
+           
+        
+ 
+       
+    </body>
+</html>
+ 
