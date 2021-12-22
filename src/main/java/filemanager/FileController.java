@@ -40,7 +40,7 @@ public String save(@RequestParam("file") MultipartFile file) throws IOException 
     fo.setMediaType(file.getContentType());
     fo.setSize(file.getSize());
     fo.setContent(file.getBytes());
- 
+    if(fo.getSize()!=0)
     filerepo.save(fo);
  
     return "redirect:/files";
