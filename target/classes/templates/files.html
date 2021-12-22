@@ -7,34 +7,45 @@
             body {
                 font-family: 'Brush Script MT', cursive;
             }
-           h2 {text-align: center;}
+           h1 {text-align: center;} 
+           h2 {text-align: center; color: blue;}
            form {text-align: center;}
            ul {text-align: center;}
            li {text-align: center;}
+           input[type=file], input[type=submit], input[type=reset] {
+                background-color: #4CAF50;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+}
            div {
-                padding-top: 50px;
-                padding-right: 30px;
-                padding-bottom: 50px;
-                padding-left: 80px;
+                padding-top: 1px;
+                padding-right: 10px;
+                padding-bottom: 5px;
+                padding-left: 10px;
            }
     </style>        
     </head>
     <body>
-       <div>
-       <h2>Add File to List</h2>
+        <div class="container">
+           
+       <h2>Add File to List</h2>    
        <form method="POST" action="/files" enctype="multipart/form-data">
             <input type="file" name="file" id="file"/>
             <input type="submit" value="Add!"/>          
              <ul style="list-style-type:none">
                 <li th:each="file : ${files}">
                 <span><a th:href="@{/files/{id}(id=${file.id})}"><span th:text="${file.name}">file name</span></a>         
-                <span th:text="${file.size}">code</span>
-                <span th:text="${file.mediaType}">code</span>  
-                    
-                      
+                <span th:text="${file.size} + bytes" >code</span>
+                     
                 </li>
             </ul>
-        </div>
+            
+     
+         <div>
     </body>
 </html>
  
