@@ -45,7 +45,7 @@
              <ul style="list-style-type:none">
                 <li th:each="file : ${files}">
                 <span><a th:href="@{/files/{id}(id=${file.id})}"><span th:text="${file.name}">file name</span></a>         
-                <span th:text="${file.size} + bytes" >code</span>
+                    <span th:text="${file.size}+_bytes" >code</span>
                      
                 </li>
             </ul>
