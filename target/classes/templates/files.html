@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <title>File manager</title>
         <style>
+            .custom-file-upload {
+                border: 1px solid #ccc;
+                display: inline-block;
+                padding: 6px 12px;
+                cursor: pointer;
+}
             body {
                 font-family: 'Brush Script MT', cursive;
             }
@@ -12,46 +18,16 @@
            form {text-align: center;}
            ul {text-align: center;}
            li {text-align: center;}
-           input[type=file], input[type=reset] {
-                background-color: white;
-                border: 1px;
-                color: blue;
-                padding: 16px 32px;
-                text-decoration: none;
-                margin: 4px 2px;
-                cursor: pointer;
-}
+
            div {
                 padding-top: 1px;
                 padding-right: 10px;
                 padding-bottom: 5px;
                 padding-left: 10px;
            }
-             label.label input[type="file"] {
-        position: absolute;
-        top: -1000px;
-      }
-      .label {
-        cursor: pointer;
-        border: 1px solid #cccccc;
-        border-radius: 5px;
-        padding: 5px 15px;
-        margin: 5px;
-        background: #dddddd;
-        display: inline-block;
-      }
-      .label:hover {
-        background: #5cbd95;
-      }
-      .label:active {
-        background: #9fa1a0;
-      }
-      .label:invalid + span {
-        color: #000000;
-      }
-      .label:valid + span {
-        color: #ffffff;
-      }
+          
+    
+
     </style>        
     </head>
     <body>
@@ -59,9 +35,12 @@
            
        <h2>Add File to List</h2>    
        <form method="POST" action="/files" enctype="multipart/form-data">
+           <label class="custom-file-upload">
             <input type="file" name="file" id="file"/>
-           
-            <input type="submit" value="Add!"/>          
+           </label>
+           <label>
+            <input type="submit" value="Add!"/>   
+           </label> 
              <ul style="list-style-type:none">
                 <li th:each="file : ${files}">
                 <span><a th:href="@{/files/{id}(id=${file.id})}"><span th:text="${file.name}">file name</span></a>         
