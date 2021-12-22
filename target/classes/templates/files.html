@@ -13,7 +13,7 @@
             body {
                 font-family: 'Brush Script MT', cursive;
             }
-           h1 {text-align: center;} 
+           h1 {text-align: center; font-size: 40px; color:blue} 
            h2 {text-align: center; color: blue;}
            form {text-align: center;}
            ul {text-align: center;}
@@ -31,9 +31,10 @@
     </style>        
     </head>
     <body>
+         <h1>MultiFile</h1>
         <div class="container">
            
-       <h2>Add File to List</h2>    
+       <h2>Add Multipart File to List</h2>    
        <form method="POST" action="/files" enctype="multipart/form-data">
            <label class="custom-file-upload">
             <input type="file" name="file" id="file"/>

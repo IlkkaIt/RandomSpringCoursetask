@@ -6,8 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DefaultController {
 
-    @GetMapping("/")
-    public String redirect() {
-        return "redirect:/files";
-    }
+   
+ 
+    @GetMapping("*")
+   public String doDefaultRedirect() {
+        return "welcome";
+
+}
 }
