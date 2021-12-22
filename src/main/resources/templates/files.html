@@ -4,14 +4,23 @@
         <meta charset="UTF-8" />
         <title>File manager</title>
         <style>
+            body {
+                font-family: 'Brush Script MT', cursive;
+            }
            h2 {text-align: center;}
            form {text-align: center;}
            ul {text-align: center;}
            li {text-align: center;}
+           div {
+                padding-top: 50px;
+                padding-right: 30px;
+                padding-bottom: 50px;
+                padding-left: 80px;
+           }
     </style>        
     </head>
     <body>
-        
+       <div>
        <h2>Add File to List</h2>
        <form method="POST" action="/files" enctype="multipart/form-data">
             <input type="file" name="file" id="file"/>
@@ -25,7 +34,7 @@
                       
                 </li>
             </ul>
-        
+        </div>
     </body>
 </html>
  
